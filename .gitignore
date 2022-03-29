@@ -1,10 +1,7 @@
 .idea
 .vscode
 build
-<<<<<<< HEAD
-=======
-cmake-build-debug
->>>>>>> 0718ac10583369e4e5fbf43c2986f3d2e5c61397
 bin
 lib
 *.exe
+cmake-build-debug

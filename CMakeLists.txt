@@ -15,15 +15,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_BUILD_TYPE "Debug")
 include_directories(csv)
-# add_executable(my-test-project main.cpp)
+
 # add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
-<<<<<<< HEAD
-# add_executable(test-lambda Lambda/lambda_1.cpp)
-add_executable(test_class class/class_1.cpp)
-=======
-add_executable(test-lambda Lambda/lambda_1.cpp)
-add_executable(readCSV_1 csv/readcsv_1.cpp)
->>>>>>> 0718ac10583369e4e5fbf43c2986f3d2e5c61397
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
