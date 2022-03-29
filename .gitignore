@@ -1,9 +1,6 @@
-# IntelliJ files
 .idea
-
-# VS Code files
 .vscode
-
 build
-
+bin
+lib
 *.exe

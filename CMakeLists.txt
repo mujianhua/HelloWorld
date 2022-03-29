@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(my-test-prpject VERSION 0.1.0)
+project(cpp_learning VERSION 0.1.0)
 
 # 设置静态库文件目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
@@ -13,7 +13,8 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 # add_executable(my-test-prpject main.cpp)
 # add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
-add_executable(test-lambda Lambda/lambda_1.cpp)
+# add_executable(test-lambda Lambda/lambda_1.cpp)
+add_executable(test_class class/class_1.cpp)
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
