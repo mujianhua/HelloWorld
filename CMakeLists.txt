@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.0.0)
+<<<<<<< HEAD
 project(cpp_learning VERSION 0.1.0)
+=======
+project(my-test-project VERSION 0.1.0)
+>>>>>>> 0718ac10583369e4e5fbf43c2986f3d2e5c61397
 
 # 设置静态库文件目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
@@ -7,14 +11,19 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../lib)
 # 可执行文件目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
-set(CMAKE_CXX_FLAGS "${CAMKE_CXX_FLAGS} -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_BUILD_TYPE "Debug")
-
-# add_executable(my-test-prpject main.cpp)
+include_directories(csv)
+# add_executable(my-test-project main.cpp)
 # add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
+<<<<<<< HEAD
 # add_executable(test-lambda Lambda/lambda_1.cpp)
 add_executable(test_class class/class_1.cpp)
+=======
+add_executable(test-lambda Lambda/lambda_1.cpp)
+add_executable(readCSV_1 csv/readcsv_1.cpp)
+>>>>>>> 0718ac10583369e4e5fbf43c2986f3d2e5c61397
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
