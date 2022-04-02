@@ -1,9 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-<<<<<<< HEAD
 project(cpp_learning VERSION 0.1.0)
-=======
-project(my-test-project VERSION 0.1.0)
->>>>>>> 0718ac10583369e4e5fbf43c2986f3d2e5c61397
 
 # 设置静态库文件目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
