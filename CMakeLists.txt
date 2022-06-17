@@ -9,6 +9,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../lib)
 
 # 可执行文件目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_BUILD_TYPE "Debug")
@@ -16,8 +17,8 @@ include_directories(csv)
 include_directories(const)
 
 # add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+
+add_executable(cpp_test1 main.cpp)
 
 add_executable(use_const const/use_const.cpp)
 
