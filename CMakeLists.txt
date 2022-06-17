@@ -3,25 +3,26 @@ project(cpp_learning VERSION 0.1.0)
 
 # 设置静态库文件目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
+
 # 动态库文件目录
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../lib)
+
 # 可执行文件目录
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_BUILD_TYPE "Debug")
 include_directories(csv)
+include_directories(const)
 
 # add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
-
-
-
+add_executable(use_const const/use_const.cpp)
 
 # note:
-# set - 显式的定义变量  
+# set - 显式的定义变量
 # 定义SRC变量，其值为main.cpp hello.cpp
 # set(SRC sayhello.cpp hello.cpp)
 
