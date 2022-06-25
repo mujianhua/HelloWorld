@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.0.0)
 project(cpp_learning VERSION 0.1.0)
 
 # 设置静态库文件目录
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
+# set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
 
 # 动态库文件目录
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../lib)
+# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../lib)
 
 # 可执行文件目录
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -17,10 +17,12 @@ include_directories(csv)
 include_directories(const)
 
 # add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
-
 add_executable(cpp_test1 main.cpp)
 
-add_executable(use_const const/use_const.cpp)
+# add_executable(use_const const/use_const.cpp)
+
+# add_executable(use_static use_static/use_static.cpp use_static/use_static1.cpp)
+add_executable(use_class use_class/friend_class.cpp)
 
 # note:
 # set - 显式的定义变量
