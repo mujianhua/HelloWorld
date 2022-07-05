@@ -15,14 +15,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_BUILD_TYPE "Debug")
 include_directories(csv)
 include_directories(const)
+include_directories(smart_ptr)
+add_executable(smart_ptr smart_ptr/auto_scope.cpp)
 
-# add_executable(pthread1 ${CMAKE_SOURCE_DIR}/pthread/muti_thread_test_1.cpp)
-add_executable(cpp_test1 main.cpp)
 
-# add_executable(use_const const/use_const.cpp)
-
-# add_executable(use_static use_static/use_static.cpp use_static/use_static1.cpp)
-add_executable(use_class use_class/friend_class.cpp)
 
 # note:
 # set - 显式的定义变量
