@@ -31,7 +31,9 @@ class auto_ptr {
 
   T* operator->() const noexcept { return ptr_; }
 
-  operator bool() const noexcept { return ptr_; }  // ???
+  operator bool() const noexcept {
+    return ptr_;
+  }  // 返回bool类型操作,可用来此指针是否为空
 
   T* get() const noexcept { return ptr_; }
 
@@ -52,8 +54,21 @@ void swap(auto_ptr<T>& lhs, auto_ptr<T>& rhs) {
   lhs.swap(rhs);
 }
 
+template <class T>
+class scope_ptr {
+ public:
+  scope_ptr(T* ptr = 0) : ptr_(ptr) {}
+
+ private:
+  T* ptr_;
+};
+
 int main(int argc, char** argv) {
   auto_ptr<shape> ptr1{create_shape(shape_type::circle)};
+
+  if (ptr1) {
+    cout << "It is not a empty ptr\n";
+  }
 
   auto_ptr<shape> ptr2(ptr1);
   return 0;
