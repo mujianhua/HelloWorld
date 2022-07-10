@@ -1,6 +1,22 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(cpp_learning VERSION 0.1.0)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_BUILD_TYPE "Debug")
+
+include_directories(csv)
+include_directories(const)
+include_directories(smart_ptr)
+
+add_executable(smart_ptr smart_ptr/auto_scope.cpp)
+
+add_executable(enum enum/class_enum.cpp)
+
+add_executable(overload overload/overload_inout.cpp)
+
+
+
 # 设置静态库文件目录
 # set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
 
@@ -9,16 +25,6 @@ project(cpp_learning VERSION 0.1.0)
 
 # 可执行文件目录
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-set(CMAKE_BUILD_TYPE "Debug")
-include_directories(csv)
-include_directories(const)
-include_directories(smart_ptr)
-add_executable(smart_ptr smart_ptr/auto_scope.cpp)
-
-
 
 # note:
 # set - 显式的定义变量
