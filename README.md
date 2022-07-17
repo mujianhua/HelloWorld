@@ -1,8 +1,25 @@
+# Learning C plus plus`
+
+email: jianhua_mu@163.com
+
 # C++ Primer
 
 ## chapter 1
 
 ## chapter 2
+
+```c++
+int* p1, p2 // p1 是指向int的指针，p2 是int
+```
+
+多文件共享``const``对象
+```c++
+// file1.cpp
+extern const int bufSize = fcn();
+// file1.h
+extern const int bufSize;
+```
+
 
 # DSA
 
