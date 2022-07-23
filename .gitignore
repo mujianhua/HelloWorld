@@ -5,3 +5,5 @@ bin
 lib
 *.exe
 cmake-build-debug
+/leetcode
+compile_commands.json
