@@ -9,8 +9,5 @@ include_directories(csv)
 include_directories(const)
 include_directories(smart_ptr)
 
-add_executable(smart_ptr smart_ptr/auto_scope.cpp)
-
-add_executable(enum enum/class_enum.cpp)
-
-add_executable(overload overload/overload_inout.cpp)
+add_executable(multi_threading multi_threading/multi_threading_mutex.cpp)
+target_link_libraries(multi_threading pthread)
