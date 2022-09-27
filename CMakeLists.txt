@@ -13,3 +13,5 @@ add_executable(multi_threading multi_threading/multi_threading_mutex.cpp)
 target_link_libraries(multi_threading pthread)
 
 add_executable(lambda0 cpp_primer_plus/chapter_18/lambda0.cpp)
+
+add_executable(leetcode leetcode/array/double_ptr.cc)
