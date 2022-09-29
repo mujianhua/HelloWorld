@@ -19,6 +19,7 @@ class Solution {
     }
     return slow_index;
   }
+  // TODO:
   int removeElement2(vector<int>& nums, int val) {
     int left = 0;
     int right = nums.size() - 1;

@@ -2,6 +2,13 @@
 
 email: jianhua_mu@163.com
 
+## Git Command
+
+```sheel
+git remote set-url origin URL  # 更换远程仓库地址，URL为新地址
+```
+
+
 # C++ Primer
 
 ## chapter 1
@@ -21,12 +28,9 @@ extern const int bufSize;
 ```
 
 
-# DSA
+## DSA
 
-
-
-
-# CMake
+## CMake
 ```cmake
 # 设置静态库文件目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
@@ -58,6 +62,5 @@ add_library(hello SHARED ${SRC})
 target_link_libraries(main hello)
 
 # 在CMAKE_CXX_FLAGS编译选项后追加-std=c++11
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 ```
-
