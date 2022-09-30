@@ -10,6 +10,7 @@ using namespace std;
 class Solution {
  public:
   /* 27. 移除元素 */
+  // todo:
   int removeElement(vector<int>& nums, int val) {
     int slow_index = 0;
     for (size_t fast_index = 0; fast_index < nums.size(); ++fast_index) {
