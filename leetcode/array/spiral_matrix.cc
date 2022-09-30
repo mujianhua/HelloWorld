@@ -6,43 +6,36 @@ using namespace std;
 class Solution {
  public:
   /* 54. 螺旋矩阵 */
-  vector<int> spiralOrder(vector<vector<int>>& matrix) {
+  // todo:..................
+  vector<int> spiralOrder(vector<vector<int>> &matrix) {
     int rows = matrix.size();
     int cols = matrix[0].size();
-    vector<int> res;
-    int loop = min(rows / 2, cols / 2);
-    int offset = 1;
-    int start_x = 0, start_y = 0;
-    int i, j;
-    while (loop--) {
-      i = start_x;
-      j = start_y;
-      for (; j < cols - offset; j++) {
-        res.push_back(matrix[i][j]);
-      }
-      for (; i < rows - offset; i++) {
-        res.push_back(matrix[i][j]);
-      }
-      for (; j > start_x; j--) {
-        res.push_back(matrix[i][j]);
-      }
-      for (; i > start_y; i--) {
-        res.push_back(matrix[i][j]);
-      }
 
-      offset++;
-      start_x++;
-      start_y++;
-    }
-    if (rows % 2 == 1) {
-      for (j = start_x; j <= cols - offset; j++) {
-        res.push_back(matrix[start_x][j]);
+    vector<int> res;
+    if (rows == 0 || cols == 0) return res;
+
+    int i, j;
+    int left = 0, right = cols - 1;
+    int top = 0, bottom = rows - 1;
+    while (left <= right && top <= bottom) {
+      for (j = left; j <= right; j++) {
+        res.push_back(matrix[top][j]);
       }
-    }
-    if (cols % 2 == 1) {
-      for (i = start_y; i <= rows - offset; i++) {
-        res.push_back(matrix[i][start_y]);
+      for (i = top + 1; i <= bottom; i++) {
+        res.push_back(matrix[i][right]);
       }
+      if (left < right && top < bottom) {
+        for (j = right - 1; j > left; j--) {
+          res.push_back(matrix[bottom][j]);
+        }
+        for (i = bottom; i > top; i--) {
+          res.push_back(matrix[i][left]);
+        }
+      }
+      left++;
+      top++;
+      right--;
+      bottom--;
     }
 
     return res;

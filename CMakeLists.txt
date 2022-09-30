@@ -11,4 +11,5 @@ target_link_libraries(multi_threading pthread)
 
 add_executable(lambda0 cpp_primer_plus/chapter_18/lambda0.cpp)
 
-add_executable(leetcode leetcode/array/spiral_matrix.cc)
+include_directories(leetcode/linked_list)
+add_executable(leetcode leetcode/linked_list/linked_list.cc)
