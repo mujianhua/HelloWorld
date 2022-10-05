@@ -1,6 +1,7 @@
 /**
  * \brief 用来快速判断一个元素是否出现集合里.
  **/
+
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -10,6 +11,27 @@ using namespace std;
 class Solution
 {
   public:
+    /*****************************************************************/
+    bool isAnagram(string s, string t)
+    {
+        vector<int> record(26, 0);
+        for (char c : s)
+        {
+            record[c - 'a']++;
+        }
+        for (char c : t)
+        {
+            record[c - 'a']--;
+        }
+        for (int i = 0; i < record.size(); i++)
+        {
+            if (record[i] != 0)
+                return false;
+        }
+        return true;
+    }
+    /*****************************************************************/
+
     /********************** 202. 快乐数 *********************/
     bool isHappy(int n)
     {
@@ -66,6 +88,50 @@ class Solution
             }
         }
         return vector<int>(ret.begin(), ret.end());
+    }
+    /*****************************************************************/
+
+    /*****************************************************************/
+    // 1. 两数之和
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        unordered_map<int, int> record_map;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            auto iter = record_map.find(target - nums[i]);
+            if (iter != record_map.end())
+            {
+                return {iter->second, i};
+            }
+            record_map.insert(pair<int, int>(nums[i], i));
+        }
+        return {};
+    }
+    /*****************************************************************/
+
+    /*****************************************************************/
+    int fourSumCount(vector<int> &nums1, vector<int> &nums2, vector<int> &nums3, vector<int> &nums4)
+    {
+        unordered_map<int, int> map; // (a+b, 出现次数)
+        for (int a : nums1)
+        {
+            for (int b : nums2)
+            {
+                map[a + b]++;
+            }
+        }
+        int count = 0;
+        for (int c : nums3)
+        {
+            for (int d : nums4)
+            {
+                if (map.find(0 - (c + d)) != map.end())
+                {
+                    count += map[0 - (c + d)];
+                }
+            }
+        }
+        return count;
     }
     /*****************************************************************/
 };
