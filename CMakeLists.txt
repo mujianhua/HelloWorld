@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(cpp VERSION 0.1.0)
+project(HelloWorld VERSION 0.1.0)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -11,5 +11,7 @@ target_link_libraries(multi_threading pthread)
 
 add_executable(lambda0 cpp_primer_plus/chapter_18/lambda0.cpp)
 
-include_directories(leetcode/linked_list)
-add_executable(leetcode leetcode/linked_list/linked_list.cc)
+#include_directories(leetcode/linked_list)
+add_executable(leetcode leetcode/hast_table/hast_table.cc)
+
+add_executable(hello_world main.cpp)
