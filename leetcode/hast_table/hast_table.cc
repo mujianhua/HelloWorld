@@ -109,13 +109,4 @@ class Solution {
   /*****************************************************************/
 };
 
-<<<<<<< HEAD
 int main() { return 0; }
-=======
-int main()
-{
-    Solution s;
-
-    return 0;
-}
->>>>>>> 03574b7fc734f43db1f083bb191ec51b530ba56f
