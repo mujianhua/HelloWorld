@@ -1,5 +1,7 @@
 #include "tree.h"
 
+#include <limits.h>
+
 #include <queue>
 
 using namespace std;
@@ -44,6 +46,100 @@ class Solution {
       }
     }
     return res;
+  }
+
+  // 二叉树层平均值
+  vector<double> averageOfLevels(TreeNode* root) {
+    queue<TreeNode*> que;
+    vector<double> res;
+    if (root != nullptr) que.push(root);
+    while (!que.empty()) {
+      double sum = 0;
+      int size = que.size();
+      for (int i = 0; i < size; ++i) {
+        TreeNode* node = que.front();
+        que.pop();
+        sum += node->val;
+        if (node->left) que.push(node->left);
+        if (node->right) que.push(node->right);
+      }
+      res.push_back(sum / size);
+    }
+    return res;
+  }
+
+  /*
+  // 429. N 叉树的层序遍历
+  vector<vector<int>> levelOrder(Node* root) {
+    queue<Node*> que;
+    vector<vector<int>> res;
+    if (root != nullptr) que.push(root);
+    while (!que.empty()) {
+      vector<int> vec;
+      int size = que.size();
+      for (int i = 0; i < size; ++i) {
+        Node* node = que.front();
+        que.pop();
+        vec.push_back(node->val);
+        for (int j = 0; j < node->children.size(); ++j) {
+          if (node->children[j]) que.push(node->children[j]);
+        }
+        // ??????????
+        // for (Node* _node : node->children) {
+        //   if (_node) que.push(node);
+        // }
+      }
+      res.push_back(vec);
+    }
+    return res;
+  }
+  */
+
+  // 515. 在每个树行中找最大值
+  vector<int> largestValues(TreeNode* root) {
+    queue<TreeNode*> que;
+    vector<int> res;
+    if (root != nullptr) que.push(root);
+    while (!que.empty()) {
+      int size = que.size();
+      int max_val = INT_MIN;
+      for (int i = 0; i < size; ++i) {
+        TreeNode* node = que.front();
+        que.pop();
+        max_val = max(max_val, node->val);
+        if (node->left) que.push(node->left);
+        if (node->right) que.push(node->right);
+      }
+      res.push_back(max_val);
+    }
+    return res;
+  }
+
+  // todo:
+  Node* connect(Node* root) {
+    queue<Node*> que;
+    if (root != nullptr) que.push(root);
+    while (!que.empty()) {
+      int size = que.size();
+      Node* pre_node = nullptr;
+      Node* node = nullptr;
+      for (int i = 0; i < size; ++i) {
+        if (i == 0) {
+          pre_node = que.front();
+          que.pop();
+          node = pre_node;
+        } else {
+          node = que.front();
+          que.pop();
+          pre_node->next = node;
+          pre_node = pre_node->next;
+        }
+        if (node->left) que.push(node->left);
+        if (node->right) que.push(node->right);
+      }
+      pre_node->next = NULL;
+    }
+    return root;
   }
 };
 
