@@ -4,6 +4,7 @@
 
 #include <queue>
 
+
 using namespace std;
 
 class Solution {
@@ -140,6 +141,43 @@ class Solution {
       pre_node->next = NULL;
     }
     return root;
+  }
+
+  int maxDepth(TreeNode* root) {
+    int depth = 0;
+    queue<TreeNode*> que;
+    if (root != nullptr) que.push(root);
+    while (!que.empty()) {
+      int size = que.size();
+      for (int i = 0; i < size; ++i) {
+        TreeNode* node = que.front();
+        que.pop();
+        if (node->left) que.push(node->left);
+        if (node->right) que.push(node->right);
+      }
+      ++depth;
+    }
+    return depth;
+  }
+
+  // 111. 二叉树的最小深度
+  // 只有当左右孩子都为空的时候，才说明遍历的最低点了。如果其中一个孩子为空则不是最低点
+  int minDepth(TreeNode* root) {
+    int depth = 0;
+    queue<TreeNode*> que;
+    if (root != nullptr) que.push(root);
+    while (!que.empty()) {
+      int size = que.size();
+      for (int i = 0; i < size; ++i) {
+        TreeNode* node = que.front();
+        que.pop();
+        if (node->left) que.push(node->left);
+        if (node->right) que.push(node->right);
+        if (!node->left && !node->right) return ++depth;  // 加本层depth
+      }
+      ++depth;
+    }
+    return depth;
   }
 };
 
