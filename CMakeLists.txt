@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 project(HelloWorld VERSION 0.1.0)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_BUILD_TYPE "Debug")
 
 
@@ -15,3 +15,5 @@ set(CMAKE_BUILD_TYPE "Debug")
 #add_executable(leetcode leetcode/tree/tree.cc)
 
 add_executable(hello_world main.cpp)
+
+add_executable(cpp_20 houjie/cpp_20.cc)
