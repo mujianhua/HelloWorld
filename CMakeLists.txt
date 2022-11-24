@@ -5,6 +5,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(CMAKE_BUILD_TYPE "Debug")
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ./out/bin)
 
 #add_executable(multi_threading multi_threading/multi_threading_mutex.cpp)
 #target_link_libraries(multi_threading pthread)
@@ -14,6 +15,4 @@ set(CMAKE_BUILD_TYPE "Debug")
 #include_directories(leetcode/linked_list)
 #add_executable(leetcode leetcode/tree/tree.cc)
 
-add_executable(hello_world main.cpp)
-
-add_executable(cpp_20 houjie/cpp_20.cc)
+add_executable(cpp_20 houjie/cpp_2_0.cc)

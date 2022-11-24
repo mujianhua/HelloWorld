@@ -1,7 +1,5 @@
 ---
 BasedOnStyle: Google
-# TabWidth: 2
-# IndentWidth: 2
 ---
 Language:                               Cpp
 Cpp11BracedListStyle:                   true
