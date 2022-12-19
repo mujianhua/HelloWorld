@@ -2,11 +2,18 @@
 
 email: jianhua_mu@163.com
 
-## Git Command
+## Command
 
 ```sheel
 git remote set-url origin URL  # 更换远程仓库地址，URL为新地址
+
+Ctrl+B        # 侧边栏
+Ctrl+Shift+E  # 文件
+Ctrl+Shift+D  # Debug
+Ctrl+Shift+G  # git
+Ctrl+Shift+X  # 扩展
 ```
+
 
 
 # C++ Primer
