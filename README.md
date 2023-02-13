@@ -4,8 +4,11 @@ email: jianhua_mu@163.com
 
 ## Command
 
-```sheel
-git remote set-url origin URL  # 更换远程仓库地址，URL为新地址
+```shell
+git remote set-url origin URL            # 更换远程仓库地址，URL为新地址
+git checkout name                        # 切换分支
+git checkout -b (new_name) origin/(name) # 拉取远程分支
+git branch -d name                       # 删除本地分支
 
 Ctrl+B        # 侧边栏
 Ctrl+Shift+E  # 文件

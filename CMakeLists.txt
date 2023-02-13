@@ -17,4 +17,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ./out/bin)
 
 add_executable(cpp_20 houjie/cpp_2_0.cc)
 
-add_executable(test_bind cpp/bind.cc)
+# add_executable(test_bind cpp/bind.cc)
